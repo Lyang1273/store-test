@@ -1,0 +1,23 @@
+{
+    "BasicInfo": {
+        "AppID": "260401",
+        "AppName": "ClassWidgets",
+        "AppIntroduction": "课表软件",
+        "AppVersion": 2.0,
+        "AppVersionCode": null,
+        "AppDeveloper": "RinLit"
+    },
+    "DevelopInfo": {
+        "ProgrammingLanguage": "Python",
+        "OpenSource": true,
+        "License": "MIT"
+    },
+    "CompatibilityInfo": {
+        "MinVersion": "10.0.10240",
+        "Bit": "64bit"
+    },
+    "SupportInfo": {
+        "Link": "classwidgets.rinlit.cn",
+        "Email": null
+    }
+}
