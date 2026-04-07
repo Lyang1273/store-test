@@ -1,10 +1,13 @@
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QComboBox, QLineEdit, QCheckBox
 from PySide6.QtCore import Qt
+
+
 class mainWindows(QMainWindow):
     def __init__(self):
         super().__init__()
         self.resize(280, 150)
-        self.setWindowTitle("登录")
+        self.setFixedSize(800, 500)
+        self.setWindowTitle("Store")
 
         usernameLabel = QLabel("用户名", self)
         usernameLabel.move(55, 30)
@@ -53,6 +56,7 @@ class mainWindows(QMainWindow):
             from PySide6.QtWidgets import QMessageBox
             QMessageBox.information(self, "成功", f"欢迎，{username}！")
             # 这里可以添加登录成功后的操作
+
 
 if __name__ == "__main__":
     app = QApplication([])
