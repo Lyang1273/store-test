@@ -2,20 +2,21 @@
 
 import requests
 import time
-import logging
 from pathlib import Path
+from loguru import logger
+import sys
 
-# 配置日志
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-# 控制台处理器
-if not logger.handlers:
-    handler = logging.StreamHandler()
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
-
+# 添加文件输出到 ./logs
+log_dir = Path("./logs")
+log_dir.mkdir(parents=True, exist_ok=True)
+# 按日期分割的日志文件
+logger.add(
+    log_dir / "{time:YYYY-MM-DD}.log",
+    format="{time:YYYY-MM-DD HH:mm:ss} | {level: <8} | {message}",
+    level="DEBUG",  # 文件记录更详细的日志
+    retention="30 days",  # 保留30天
+    encoding="utf-8"
+)
 
 class internet:
     @staticmethod
@@ -109,3 +110,8 @@ class internet:
                 filepath.unlink()
                 logger.warning(f"已删除不完整的文件: {filepath}")
             return False
+
+
+if __name__ == "__main__":
+    # 测试下载
+    internet.download("https://httpbin.org/bytes/10240")
