@@ -4,7 +4,6 @@ import requests
 import time
 from pathlib import Path
 from loguru import logger
-import sys
 
 # 添加文件输出到 ./logs
 log_dir = Path("./logs")
@@ -14,9 +13,9 @@ logger.add(
     log_dir / "{time:YYYY-MM-DD}.log",
     format="{time:YYYY-MM-DD HH:mm:ss} | {level: <8} | {message}",
     level="DEBUG",  # 文件记录更详细的日志
-    retention="30 days",  # 保留30天
     encoding="utf-8"
 )
+
 
 class internet:
     @staticmethod
@@ -111,7 +110,3 @@ class internet:
                 logger.warning(f"已删除不完整的文件: {filepath}")
             return False
 
-
-if __name__ == "__main__":
-    # 测试下载
-    internet.download("https://httpbin.org/bytes/10240")
