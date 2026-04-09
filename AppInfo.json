@@ -3,6 +3,7 @@
         "AppID": "260401",
         "AppName": "ClassWidgets",
         "AppIntroduction": "课表软件",
+        "AppVersionSN": 1,
         "AppVersion": 2.0,
         "AppVersionCode": null,
         "AppDeveloper": "RinLit"
@@ -19,5 +20,21 @@
     "SupportInfo": {
         "Link": "classwidgets.rinlit.cn",
         "Email": null
+    },
+    "UserExperienceTip": {
+        "TouchSupport": true,
+        "LowMemoryUsage": true,
+        "i18n": true
+    },
+    "Permission": {
+        "Camera": false,
+        "Microphone": false,
+        "ModifySystemRegistry": false,
+        "Internet": true,
+        "Administrator": false,
+        "location": true,
+        "MonitorUserOperations": false,
+        "DeviceInformation": false,
+        "RunInTheBackground": false
     }
 }
