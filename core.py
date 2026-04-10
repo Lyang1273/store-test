@@ -16,6 +16,11 @@ logger.add(
     encoding="utf-8"
 )
 
+"""
+class file:
+    def
+"""
+
 
 class internet:
     @staticmethod
